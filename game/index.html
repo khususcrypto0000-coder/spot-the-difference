@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dusk Differences — Spot the Difference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="brand">🌆 <strong>Dusk Differences</strong> <span>· spot the difference</span></div>
+    <div class="top-right"><span id="best-text"></span></div>
+  </header>
+
+  <div class="hud">
+    <div class="hud-item level"><span id="level-name">Level 1 · Warung Kopi Senja — Dusk Coffee Stall</span></div>
+    <div class="hud-item timer">
+      <span class="timer-label">⏱</span>
+      <div class="timer-track"><div id="timer-bar" class="timer-bar"></div></div>
+      <span id="timer-text">3:00</span>
+    </div>
+    <div class="hud-item found"><span id="found-text">Found 0 / 7 · 7 left</span></div>
+    <div class="hud-item score"><span id="score-text">Score 0</span></div>
+    <div class="hud-item hints"><span id="hints-text">Hints 3</span></div>
+    <div class="hud-item buttons">
+      <button id="btn-hint" type="button">💡 Hint <kbd>H</kbd></button>
+      <button id="btn-pause" type="button">⏸ Pause <kbd>P</kbd></button>
+      <button id="btn-sound" type="button">🔊 Sound on</button>
+      <button id="btn-restart" type="button">↻ Restart <kbd>R</kbd></button>
+    </div>
+  </div>
+
+  <div class="board-wrap" id="board-wrap">
+    <div class="board">
+      <figure class="panel">
+        <canvas id="panel-left" width="620" height="400"></canvas>
+        <figcaption>Picture A</figcaption>
+      </figure>
+      <figure class="panel">
+        <canvas id="panel-right" width="620" height="400"></canvas>
+        <figcaption>Picture B</figcaption>
+      </figure>
+    </div>
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h1 id="overlay-title">Dusk Differences</h1>
+        <div id="overlay-body"></div>
+        <button id="overlay-btn" type="button">Start</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="help">
+    Click a difference on either picture to ring it on both. Wrong clicks cost 5 seconds.
+    Keyboard: arrow keys move the crosshair · Enter marks · H hint · P pause · M sound.
+  </footer>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

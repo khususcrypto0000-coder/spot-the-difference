@@ -1,0 +1,157 @@
+/* Dusk Differences: warm dusk theme, built for a 1280x720 desktop window. */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #171226;
+  color: #f6ead8;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.page {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 10px 14px 12px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 2px 2px 8px;
+}
+
+.brand { font-size: 22px; }
+.brand span { color: #c9b8a3; font-size: 14px; }
+.top-right { color: #ffd23f; font-size: 14px; }
+
+.hud {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #241b3a;
+  border: 1px solid #3a2d5c;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.hud-item { font-size: 15px; white-space: nowrap; }
+.hud-item.level { font-weight: 700; color: #ffd23f; }
+.hud-item.found { font-weight: 700; color: #3ddc84; }
+.hud-item.score { font-weight: 700; }
+
+.timer { display: flex; align-items: center; gap: 8px; flex: 1 1 180px; }
+.timer-track {
+  flex: 1;
+  height: 10px;
+  background: #171226;
+  border-radius: 6px;
+  overflow: hidden;
+  min-width: 80px;
+}
+.timer-bar {
+  height: 100%;
+  width: 100%;
+  background: #3ddc84;
+  border-radius: 6px;
+  transition: width 0.2s linear;
+}
+.timer-bar.low { background: #ff5964; }
+#timer-text { font-variant-numeric: tabular-nums; font-weight: 700; }
+
+.buttons { display: flex; gap: 6px; margin-left: auto; }
+
+button {
+  background: #3a2d5c;
+  color: #f6ead8;
+  border: 1px solid #574a86;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { background: #4a3a72; }
+button:disabled { opacity: 0.45; cursor: default; }
+button kbd {
+  font-family: inherit;
+  background: #171226;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 11px;
+}
+
+.board-wrap { position: relative; }
+
+.board {
+  display: flex;
+  gap: 16px;
+}
+
+.panel { margin: 0; flex: 1 1 0; min-width: 0; }
+.panel canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 620 / 400;
+  border-radius: 10px;
+  border: 2px solid #3a2d5c;
+  background: #0f1e3d;
+  cursor: crosshair;
+}
+.panel figcaption {
+  text-align: center;
+  color: #c9b8a3;
+  font-size: 13px;
+  padding-top: 5px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 8, 24, 0.72);
+  border-radius: 10px;
+  z-index: 5;
+}
+.overlay.hidden { display: none; }
+
+.overlay-card {
+  background: #241b3a;
+  border: 1px solid #574a86;
+  border-radius: 14px;
+  padding: 22px 30px;
+  max-width: 560px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+.overlay-card h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  color: #ffd23f;
+}
+.overlay-card p { margin: 8px 0; line-height: 1.5; }
+.overlay-card .levels { color: #c9b8a3; font-size: 14px; }
+.overlay-card .keys { color: #9d8fb8; font-size: 13px; }
+.overlay-card .big { font-size: 20px; font-weight: 700; }
+.overlay-card .stars { font-size: 30px; letter-spacing: 6px; color: #ffd23f; }
+#overlay-btn {
+  margin-top: 12px;
+  font-size: 17px;
+  padding: 10px 26px;
+  background: #d64545;
+  border-color: #ff8a80;
+}
+#overlay-btn:hover { background: #e05656; }
+
+.help {
+  margin-top: 10px;
+  text-align: center;
+  color: #9d8fb8;
+  font-size: 13px;
+  line-height: 1.5;
+}
